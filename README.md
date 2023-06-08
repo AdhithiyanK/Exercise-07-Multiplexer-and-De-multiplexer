@@ -65,62 +65,102 @@ Give the respective inputs for timing diagram and obtain the results.
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
+
+
 Developed by: ADHITHIYAN.K
+
 RegisterNumber:  212222230006
 */
 
 ### Mulitplexer :
 
 
+
+### 4-1 Multiplexer
+
 module mux(i0, i1, i2, i3, s0, s1, y);
+
 input i0, i1, i2, i3, s0, s1;
+
 output y;
+
 wire p, q, r, s, s0c, s1c;
+
 not(s0c, s0);
+
 nor(s1c, s1);
+
 and(p, s0c, s1c, i0);
+
+
 and(q, s0c, s1, i1);
+
 and(r, s0, s1c, i2);
+
 and(s, s0, s1, i3);
-or(y, p, q, r, s);
+
+or(y, p, q, r, s);                                                                                                                                                           
+
 endmodule
 
 
 ### Demultiplexer :
+
+
+
+### 1-4 Demultiplexer
+
 module demux(y0, y1, y2, y3, s0, s1, i);
+
 input s0, s1, i;
+
 output y0, y1, y2, y3;
+
 wire s0c, s1c;
+
 nor(s0c, s0);
+
 nor(s1c, s1);
+
 and(y0, i, s0c, s1);
+
 and(y1, i, s0c, s1c);
+
 and(y2, i, s0, s1c);
+
 and(y3, i, s0, s1);
+
 endmodule
+*/
 
 ### RTL LOGIC  
 
 Multiplexer:
+
 ![m1](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/5bfe8b0c-8f01-4695-9495-e180dc7294e3)
 
 Demultiplexer:
+
 ![d1](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/3cffb7e1-4d96-4337-938a-ee762d9720be)
 
 ### TIMING DIGRAMS  
 
-Multiplexer:
+Multiplexer: 
+
 ![m2](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/05d58265-9a3e-45f3-bd61-3479dc3e3c6f)
 
 Demultiplexer:
+
 ![d2](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/21167adc-d04c-45d0-b849-83bfc22f542d)
 
 ### TRUTH TABLE 
 
 Multiplexer:
+
 ![m3](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/9c74602a-c9c5-486f-8370-b84522105716)
 
 Demultiplexer:
+
 ![d3](https://github.com/AdhithiyanK/Exercise-07-Multiplexer-and-De-multiplexer/assets/121029258/c8886f9d-b392-400a-992f-4fca601179ab)
 
 ### RESULTS 
